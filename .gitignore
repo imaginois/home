@@ -2,3 +2,7 @@
 pass.txt
 
 !.gitignore
+!.bashrc
+!.bash_aliases
+!.bash_profile
+
