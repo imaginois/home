@@ -1,9 +1,15 @@
-*
+*.*
 pass.txt
 
+Dropbox/
+Perforce
+PlayOnLinux's virtual drives
+Vagrant
+Videos
 !.gitignore
 !.bashrc
 !.bash_aliases
 !.bash_profile
-!.config/sublime-text*
-
+!.config/
+.config/*
+!.config/sublime-text-3/
