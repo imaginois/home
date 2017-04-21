@@ -5,4 +5,5 @@ pass.txt
 !.bashrc
 !.bash_aliases
 !.bash_profile
+!.config/sublime-text*
 
