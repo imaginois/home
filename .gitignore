@@ -13,3 +13,5 @@ Videos
 !.config/
 .config/*
 !.config/sublime-text-3/
+!*sublime-project*
+!*sublime-workspace*
