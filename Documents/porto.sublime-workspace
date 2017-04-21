@@ -16,45 +16,27 @@
 	"buffers":
 	[
 		{
-			"contents": "vagrantfile:\n    target: local\n    vm:\n        provider:\n            local:\n                box: puphpet/ubuntu1604-x64\n                box_url: puphpet/ubuntu1604-x64\n                box_version: '0'\n                chosen_virtualizer: virtualbox\n                virtualizers:\n                    virtualbox:\n                        modifyvm:\n                            natdnshostresolver1: false\n                        showgui: 0\n                    vmware:\n                        numvcpus: 1\n                    parallels:\n                        linked_clone: 0\n                        check_guest_tools: 0\n                        update_guest_tools: 0\n                machines:\n                    vflm_jb9qjfymc5zr:\n                        id: porto\n                        hostname: porto.local\n                        network:\n                            private_network: 192.168.200.100\n                            forwarded_port:\n                                vflmnfp_6haw0ubngcev:\n                                    host: '2100'\n                                    guest: '22'\n                                vflmnfp_umym08mphyyd:\n                                    host: '8100'\n                                    guest: '80'\n                                vflmnfp_89as89jhj1po:\n                                    host: '8888'\n                                    guest: '8000'\n                                vflmnfp_89asdjdj71po:\n                                    host: '5000'\n                                    guest: '5000'\n                                vflmnfp_84gjoo9kl35f:\n                                    host: '5001'\n                                    guest: '5001'\n                        memory: '512'\n                        cpus: '1'\n        provision:\n            puppet:\n                manifests_path: puphpet/puppet/manifests\n                module_path:\n                    - puphpet/puppet/modules\n                    - puphpet/puppet/manifests\n                options:\n                    - '--verbose'\n                    - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'\n        synced_folder:\n            vflsf_9q7xq1f6wjrc:\n                source: ../radio/\n                target: /var/www/radio\n                sync_type: default\n                smb:\n                    smb_host: ''\n                    smb_username: ''\n                    smb_password: ''\n                    mount_options:\n                        dir_mode: '0775'\n                        file_mode: '0664'\n                rsync:\n                    args:\n                        - '--verbose'\n                        - '--archive'\n                        - '-z'\n                    exclude:\n                        - .vagrant/\n                        - .git/\n                    auto: 'true'\n                owner: www-data\n                group: www-data\n            vflsf_qjrvvdg34pfn:\n                source: ../VSTB/\n                target: /var/www/vstb\n                sync_type: default\n                smb:\n                    smb_host: ''\n                    smb_username: ''\n                    smb_password: ''\n                    mount_options:\n                        dir_mode: '0775'\n                        file_mode: '0664'\n                rsync:\n                    args:\n                        - '--verbose'\n                        - '--archive'\n                        - '-z'\n                    exclude:\n                        - .vagrant/\n                        - .git/\n                    auto: 'true'\n                owner: www-data\n                group: www-data\n            vflsf_pfjegh3jgfhe8:\n                source: ../session/\n                target: /var/www/session\n                sync_type: default\n                smb:\n                    smb_host: ''\n                    smb_username: ''\n                    smb_password: ''\n                    mount_options:\n                        dir_mode: '0775'\n                        file_mode: '0664'\n                rsync:\n                    args:\n                        - '--verbose'\n                        - '--archive'\n                        - '-z'\n                    exclude:\n                        - .vagrant/\n                        - .git/\n                    auto: 'true'\n                owner: www-data\n                group: www-data\n            vflsf_39ndp6ett5gd:\n                source: ../Webclient/ML\n                target: /var/www/stb\n                sync_type: default\n                smb:\n                    smb_host: ''\n                    smb_username: ''\n                    smb_password: ''\n                    mount_options:\n                        dir_mode: '0775'\n                        file_mode: '0664'\n                rsync:\n                    args:\n                        - '--verbose'\n                        - '--archive'\n                        - '-z'\n                    exclude:\n                        - .vagrant/\n                        - .git/\n                    auto: 'true'\n                owner: www-data\n                group: www-data\n            vflsf_afgf15s8vyle:\n                source: ../Minerva_WebClient/ML\n                target: /var/www/webclient\n                sync_type: default\n                smb:\n                    smb_host: ''\n                    smb_username: ''\n                    smb_password: ''\n                    mount_options:\n                        dir_mode: '0775'\n                        file_mode: '0664'\n                rsync:\n                    args:\n                        - '--verbose'\n                        - '--archive'\n                        - '-z'\n                    exclude:\n                        - .vagrant/\n                        - .git/\n                    auto: 'true'\n                owner: www-data\n                group: www-data\n            vflsf_4sx4vplev3do:\n                source: ../ladybug\n                target: /var/www/ladybug\n                sync_type: default\n                smb:\n                    smb_host: ''\n                    smb_username: ''\n                    smb_password: ''\n                    mount_options:\n                        dir_mode: '0775'\n                        file_mode: '0664'\n                rsync:\n                    args:\n                        - '--verbose'\n                        - '--archive'\n                        - '-z'\n                    exclude:\n                        - .vagrant/\n                        - .git/\n                    auto: 'true'\n                owner: www-data\n                group: www-data\n        usable_port_range:\n            start: 10200\n            stop: 10500\n        post_up_message: ''\n    ssh:\n        host: 'false'\n        port: 'false'\n        private_key_path: 'false'\n        username: vagrant\n        guest_port: 'false'\n        keep_alive: '1'\n        forward_agent: 'false'\n        forward_x11: 'false'\n        shell: 'bash -l'\n        insert_key: 'false'\n    vagrant:\n        host: detect\n    proxy:\n        http: ''\n        https: ''\n        ftp: ''\n        no_proxy: ''\nserver:\n    install: '1'\n    packages:\n        - nano\n        - git\n        - tree\n        - unzip\n        - htop\n        - npm\n        - php7.0\n        - libapache2-mod-php7.0\n        - php7.0-mbstring\n        - docker.io\n        # - docker-machine\n        - fortune-mod\n        - docker-compose\nusers_groups:\n    install: '1'\n    groups:\n        - developer\n    users:\n        - 'metodi:developer'\nlocale:\n    install: '1'\n    settings:\n        default_locale: en_US.UTF-8\n        locales:\n            - en_GB.UTF-8\n            - en_US.UTF-8\n        timezone: Europe/Sofia\nfirewall:\n    install: '1'\n    rules: {  }\ncron:\n    install: '1'\n    jobs: {  }\nnginx:\n    install: '0'\n    settings:\n        version: present\n        default_vhost: 1\n        proxy_buffers: '4 256k'\n        proxy_buffer_size: 128k\n        proxy_connect_timeout: 600s\n        proxy_send_timeout: 600s\n        proxy_read_timeout: 600s\n        names_hash_bucket_size: 128\n    upstreams: {  }\n    vhosts:\n        nxv_73uew4tztkxn:\n            server_name: awesome.dev\n            server_aliases:\n                - www.awesome.dev\n            www_root: /var/www/awesome\n            listen_port: '80'\n            client_max_body_size: 1m\n            ssl: '0'\n            ssl_cert: ''\n            ssl_key: ''\n            ssl_port: '443'\n            ssl_protocols: ''\n            ssl_ciphers: ''\n            rewrite_to_https: '1'\n            spdy: '1'\n            locations:\n                nxvl_cpie707l7m4v:\n                    www_root: ''\n                    location: /\n                    index_files:\n                        - index.html\n                        - index.htm\n                        - index.php\n                    try_files:\n                        - $uri\n                        - $uri/\n                        - /index.php$is_args$args\n                    fastcgi: ''\n                    fastcgi_index: ''\n                    fastcgi_split_path: ''\n                    proxy: ''\n                    proxy_redirect: ''\n                nxvl_9wb02sw0yd0s:\n                    www_root: ''\n                    location: '~ \\.php$'\n                    try_files:\n                        - $uri\n                        - $uri/\n                        - /index.php$is_args$args\n                    fastcgi: '127.0.0.1:9000'\n                    fastcgi_index: index.php\n                    fastcgi_split_path: '^(.+\\.php)(/.*)$'\n                    fast_cgi_params_extra:\n                        - 'SCRIPT_FILENAME $request_filename'\n                        - 'APP_ENV dev'\n                    set:\n                        - '$path_info $fastcgi_path_info'\n                    proxy: ''\n                    proxy_redirect: ''\n    proxies: {  }\napache:\n    install: '1'\n    settings:\n        version: 2.4\n        user: www-data\n        group: www-data\n        default_vhost: true\n        manage_user: false\n        manage_group: false\n        sendfile: 0\n    modules:\n        - proxy_fcgi\n        - rewrite\n        - headers\n    vhosts:\n        av_radiolocal:\n            servername: radio.local\n            serveraliases:\n                - www.radio.local\n            docroot: /var/www/radio\n            port: '80'\n            setenv:\n                - 'APP_ENV dev'\n            setenvif:\n                - 'Authorization \"(.*)\" HTTP_AUTHORIZATION=$1'\n            custom_fragment: ''\n            ssl: '0'\n            ssl_cert: ''\n            ssl_key: ''\n            ssl_chain: ''\n            ssl_certs_dir: ''\n            ssl_protocol: ''\n            ssl_cipher: ''\n            directories:\n                avd_0nyf3ro8cfmy:\n                    path: /var/www/radio\n                    options:\n                        - Indexes\n                        - FollowSymlinks\n                        - MultiViews\n                    allow_override:\n                        - All\n                    require:\n                        - 'all granted'\n                    custom_fragment: ''\n                    files_match:\n                        avdfm_hu7vgb28thw9:\n                            path: \\.php$\n                            sethandler: 'proxy:fcgi://127.0.0.1:9000'\n                            custom_fragment: ''\n                            provider: filesmatch\n                    provider: directory\n        av_vstblocal:\n            servername: vstb.local\n            serveraliases:\n                - www.vstb.local\n            docroot: /var/www/vstb/ML/src\n            port: '80'\n            custom_fragment: '/home/vagrant/custom_fragments/vstb'\n            ssl: '0'\n            ssl_cert: ''\n            ssl_key: ''\n            ssl_chain: ''\n            ssl_certs_dir: ''\n            ssl_protocol: ''\n            ssl_cipher: ''\n        av_stagingvstblocal:\n            servername: staging.vstb.local\n            serveraliases:\n                - www.staging.vstb.local\n            docroot: /var/www/vstb/staging/src\n            port: '80'\n            custom_fragment: '/home/vagrant/custom_fragments/vstb'\n            ssl: '0'\n            ssl_cert: ''\n            ssl_key: ''\n            ssl_chain: ''\n            ssl_certs_dir: ''\n            ssl_protocol: ''\n            ssl_cipher: ''\n        av_session:\n            servername: session\n            serveraliases:\n                - www.session\n            docroot: /var/www/session\n            port: '80'\n            custom_fragment: '/home/vagrant/custom_fragments/session'\n            ssl: '0'\n            ssl_cert: ''\n            ssl_key: ''\n            ssl_chain: ''\n            ssl_certs_dir: ''\n            ssl_protocol: ''\n            ssl_cipher: ''\n        av_stblocal:\n            servername: stb.local\n            serveraliases:\n                - www.stb.local\n            docroot: /var/www/stb/source/\n            port: '80'\n            custom_fragment: '/home/vagrant/custom_fragments/stb'\n            ssl: '0'\n            ssl_cert: ''\n            ssl_key: ''\n            ssl_chain: ''\n            ssl_certs_dir: ''\n            ssl_protocol: ''\n            ssl_cipher: ''\n        av_webclientlocal:\n            servername: webclient.local\n            serveraliases:\n                - www.webclient.local\n            docroot: /var/www/webclient\n            port: '80'\n            custom_fragment: ''\n            ssl: '0'\n            ssl_cert: ''\n            ssl_key: ''\n            ssl_chain: ''\n            ssl_certs_dir: ''\n            ssl_protocol: ''\n            ssl_cipher: ''\n        av_ladybuglocal:\n            servername: ladybug.local\n            serveraliases:\n                - www.ladybug.local\n            docroot: /var/www/ladybug/public\n            port: '80'\n            custom_fragment: ''\n            ssl: '0'\n            ssl_cert: ''\n            ssl_key: ''\n            ssl_chain: ''\n            ssl_certs_dir: ''\n            ssl_protocol: ''\n            ssl_cipher: ''\nletsencrypt:\n    install: '1'\n    settings:\n        email: mderibanov@minervanetworks.com\n    domains: {  }\nphp:\n    install: '1'\n    settings:\n        version: '7.0'\n    modules:\n        php:\n            - cli\n            - intl\n            - xml\n        pear: {  }\n        pecl: {  }\n    ini:\n        display_errors: 'On'\n        error_reporting: '-1'\n        session.save_path: /var/lib/php/session\n        date.timezone: UTC\n    fpm_ini:\n        error_log: /var/log/php-fpm.log\n    fpm_pools:\n        phpfp_3l26cn7wn0i9:\n            ini:\n                prefix: www\n                listen: '127.0.0.1:9000'\n                security.limit_extensions: .php\n                user: www-user\n                group: www-data\n    composer: '1'\n    composer_home: ''\nxdebug:\n    install: '1'\n    settings:\n        xdebug.default_enable: '1'\n        xdebug.remote_autostart: '0'\n        xdebug.remote_connect_back: '1'\n        xdebug.remote_enable: '1'\n        xdebug.remote_handler: dbgp\n        xdebug.remote_port: '9000'\nblackfire:\n    install: '0'\n    settings:\n        server_id: ''\n        server_token: ''\n        agent:\n            http_proxy: ''\n            https_proxy: ''\n            log_file: stderr\n            log_level: '1'\n        php:\n            agent_timeout: '0.25'\n            log_file: ''\n            log_level: '1'\nxhprof:\n    install: '0'\nwpcli:\n    install: '0'\n    version: v0.24.1\ndrush:\n    install: '0'\n    version: 8.0.5\nruby:\n    install: '1'\n    versions:\n        rv_p7933czz2fqe:\n            default: '1'\n            bundler: '1'\n            version: 2.3.1\n            gems:\n                - deep_merge@1.0.1\n                - activesupport@4.2.6\n                - vine@0.2\npython:\n    install: '1'\n    packages: {  }\n    versions: {  }\nnodejs:\n    install: '1'\n    settings:\n        version: '6'\n    npm_packages:\n        - npm\n        - gulp\n        - grunt\n        - grunt-cli\n        - bower\n        - documentation\n        - istanbul\nhhvm:\n    install: '0'\n    composer: '1'\n    composer_home: ''\n    settings: {  }\n    server_ini:\n        hhvm.server.host: 127.0.0.1\n        hhvm.server.port: '9000'\n        hhvm.log.use_log_file: '1'\n        hhvm.log.file: /var/log/hhvm/error.log\n    php_ini:\n        display_errors: 'On'\n        error_reporting: '-1'\n        date.timezone: UTC\nmariadb:\n    install: '0'\n    settings:\n        version: '10.1'\n        root_password: '123'\n        override_options: {  }\n    adminer: 0\n    users:\n        mariadbnu_phneqc2qjk8r:\n            name: dbuser\n            password: '123'\n    databases:\n        mariadbnd_aq7t8ja9mrpq:\n            name: dbname\n            sql: ''\n    grants:\n        mariadbng_4ngm488hk2c3:\n            user: dbuser\n            table: '*.*'\n            privileges:\n                - ALL\nmysql:\n    install: '1'\n    settings:\n        version: '5.7'\n        root_password: mn2111td\n        override_options: {  }\n    adminer: '1'\n    users:\n        mysqlnu_fb3gxvilj1zv:\n            name: radio\n            password: oidar\n        mysqlnu_fjd5cec31abf:\n            name: ladybug\n            password: gubydal\n    databases:\n        mysqlnd_msak2w4m52jo:\n            name: radio\n            sql: ''\n        mysqlnd_fidmyvgfbanh:\n            name: ladybug\n            sql: ''\n            #sql: /var/www/ladybug/sql/ladybug.sql\n    grants:\n        mysqlng_01uguzq2dcj3:\n            user: radio\n            table: '*.*'\n            privileges:\n                - ALL\n        mysqlng_a74yrfg2dcj3:\n            user: ladybug\n            table: '*.*'\n            privileges:\n                - ALL\npostgresql:\n    install: '0'\n    settings:\n        global:\n            encoding: UTF8\n            version: '9.6'\n        server:\n            postgres_password: '123'\n    databases: {  }\n    users: {  }\n    grants: {  }\n    adminer: 0\nmongodb:\n    install: '0'\n    settings:\n        bind_ip: 127.0.0.1\n        port: '27017'\n    globals:\n        version: 2.6.0\n    databases: {  }\nredis:\n    install: '0'\n    settings:\n        port: '6379'\nsqlite:\n    install: '0'\n    adminer: 0\n    databases: {  }\nmailhog:\n    install: '0'\n    settings:\n        smtp_ip: 0.0.0.0\n        smtp_port: 1025\n        http_ip: 0.0.0.0\n        http_port: '8025'\n        path: /usr/local/bin/mailhog\nbeanstalkd:\n    install: '0'\n    settings:\n        listenaddress: 0.0.0.0\n        listenport: '11300'\n        maxjobsize: '65535'\n        maxconnections: '1024'\n        binlogdir: /var/lib/beanstalkd/binlog\n        binlogfsync: null\n        binlogsize: '10485760'\n    beanstalk_console: 0\nrabbitmq:\n    install: '0'\n    settings:\n        port: '5672'\n    users: {  }\n    vhosts: {  }\n    plugins: {  }\nelastic_search:\n    install: '0'\n    settings:\n        version: 2.3.1\n        java_install: true\n    instances:\n        esi_w9orr96dlkfk:\n            name: es-01\nsolr:\n    install: '0'\n    settings:\n        version: 5.5.2\n        port: '8984'\n\n",
-			"file": "/home/imaginois/Vagrant/porto/puphpet/config.yaml",
-			"file_size": 18844,
-			"file_write_time": 131372109475852299,
+			"file": "/home/imaginois/Perforce/porto/Vagrantfile",
 			"settings":
 			{
-				"buffer_size": 18844,
+				"buffer_size": 909,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/imaginois/Perforce/porto/puphpet/files/startup-once-unprivileged/radio-setup.sh",
+			"settings":
+			{
+				"buffer_size": 44,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMms//+yNMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo      `dMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMN        /MMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+      `yhdNMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdo::/s+...-:sNMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo`   -  `+mMMMMMMMMMMMMMM\nMMMmhhhhhhhhhhhhhhhhhhhhhhhNMMMNy:    -.      oNMMMMMMMMMMMM\nMMMs                      -:::.    `+mMo       .mMMMMMMMMMMM\nMMMs                     `-    `-+hMMMMMh`      `dMMMMMMMMMM\nMMMs                      `yddNMMMMMMMMMMy       `MMMMMMMMMM\nMMMs                       hMMMMMMMMMMMMMM.      .MMMMMMMMMM\nMMMs                       hMMMMMMMMMMMMd:       /MMMMMMMMMM\nMMMs                       hMMMMMMMMMMm/         .MMMMMMMMMM\nMMMs                       hMMMMMMMMMy`    :hy    NMMMMMMMMM\nMMMs                       hMMMMMMMMM:    hMMM.   :dMMMMMMMM\nMMMs                       hMMMMMMMMMm`   -NMMm-    `:oydMMM\nMMMs                       hMMMMMMMMMMm.   :MMMMd+-      /MM\nMMMs                       hMMMMMMMMMMMm.   +MMMMMMMdyo++dMM\nMMMdooooooooooooooooooooooomMMMMMMMMMMMMm`  `MMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyyNMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\nMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n\n    _____   ______  _____  _____ _______ _______ _______     \n   |_____] |_____/ |     |   |   |______ |          |        \n   |       |    \\_ |_____| __|   |______ |_____     |        \n                                                             \n           _____   _____   ______ _______  _____               \n          |_____] |     | |_____/    |    |     |              \n          |       |_____| |    \\_    |    |_____|              \n                                                     \n\n                          ABOUT\n          =======================================\n\nThis project aims to bring a unified development enviroment, \nthat is cross-platform and cross-client and technology \nindipendant. Such unification of environtments will\nprovide developers with more easily configurable, manageble \nand debuggable workflow, thus reducing the work of creation\nby removing hard choices and adding automated procedures\n\n\n          READ ME FOR SOME IMPORTANT INFORMATION!\n          =======================================\n\nIf Puppet did not blow up (you do not see a sea of red\nabove), then your VM was generated successfully!\n\n* A unique private key was generated for you! It is located\n  at \"puphpet/files/dot/ssh/id_rsa\". If you are on Windows,\n  a PuTTY-friendly key was also generated at same location\n  with a \".ppk\" extension.\n\n* If you want to use your own private key for future\n  provisions, overwrite the generated key above with your\n  own. Make sure to follow the naming pattern, and include a\n  \".pub\" public key.\n\n* If you wish to add packages, modules, Apache/Nginx vhosts,\n  or anything else, open up \"puphpet/config.yaml\" and make\n  changes within! Some things will have random strings like\n  \"DIdXRs2OI2LJ\" - you must create a random string as well!\n  To do so, please apply face to keyboard and roll.\n\n* If you change \"puphpet/config.yaml\", simply run\n  \"$ vagrant provision\" and your VM will be updated with the\n  changes you requested!\n\n------------------------------------------------------------\n* you can create a config-custom.yaml file which is \nignored by the VCS and will extend and apply config options\nonly for you\n------------------------------------------------------------\n\n******************* DEVELOPER SECTION **********************\n\n* follow the SOLID principle\n* follow the KISS principle\n* use short & semantic names for functions and variable names\n* update the porto repo regulary, more good stuff is comming\n\n****************** COMMANDS CHEATSHEET *********************\n\n## Generic commands\n* ls – directory listing\n* ls -al – formatted listing with hidden files\n* cd dir - change directory to dir\n* cd – change to home\n* pwd – show current directory\n* mkdir dir – create a directory dir\n* rm file – delete file\n* rm -rf dir – force remove directory dir *\n* cp file1 file2 – copy file1 to file2\n* mv file1 file2 – rename or move file1 to file2\n* ln -s file link – create symbolic link link to file\n* touch file – create or update file\n* cat > file – places standard input into file\n* more file – output the contents of file\n* tail -f file – output the contents of file as it grows, starting with the last 10 lines\n\n## Process management commands\n* ps – display your currently active processes\n* top – display all running processes\n* kill pid – kill process id pid\n* killall proc – kill all processes named proc *\n\n## Searching for strings and files\n* grep pattern files – search for pattern in files\n* grep -r pattern dir – search recursively for\n* pattern in dir\n* command | grep pattern – search for pattern in the output of command\n* locate file – find all instances of file\n\n****************** VAGRANT CHEATSHEET *********************\n\n* vagrant up - starts vagrant environment (also provisions only on the FIRST vagrant up)\n* vagrant status - outputs status of the vagrant machine\n* vagrant halt - stops the vagrant machine\n* vagrant reload - restarts vagrant machine, loads new Vagrantfile configuration\n* vagrant provision - forces reprovisioning of the vagrant machine\n* vagrant ssh - connects to machine via SSH\n* vagrant destroy - stops and deletes all traces of the vagrant machine\n\n********************** HOSTS FILE **************************\n\nPaste this into your hosts file\n\n192.168.200.100  vstb.local staging.vstb.local session \n192.168.200.100  stb.local\n192.168.200.100  radio.local\n\nfor Windows users       @-> C:\\Windows\\System32\\drivers\\etc\\hosts\nfor Linux and Mac users @-> /etc/hosts\n\n********************** Back Office Urls **************************\n\nYou can find fake backoffices running in the virtual machine.\n\nhttp://localhost:5000 - vstb\nhttp://localhost:5001 - stb\n\n============================================================\n\n      #1) Respect the privacy of others.\n      #2) Think before you type.\n      #3) With great power comes great responsibility.\n\n      May the source be with you!\n\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n|  ____                _      _    _                    _  |\n| |  _ \\ ___  __ _  __| |    / \\  | |__   _____   _____| | |\n| | |_) / _ \\/ _` |/ _` |   / _ \\ | '_ \\ / _ \\ \\ / / _ \\ | |\n| |  _ <  __/ (_| | (_| |  / ___ \\| |_) | (_) \\ V /  __/_| |\n| |_| \\_\\___|\\__,_|\\__,_| /_/   \\_\\_.__/ \\___/ \\_/ \\___(_) |\n|                                                          |\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\nQuestions, feedback and requests go to: \n                            - mderibanov@minervanetworks.com\n",
-			"file": "/home/imaginois/Vagrant/porto/puphpet/shell/ascii-art/important-notices.txt",
-			"file_size": 7338,
-			"file_write_time": 131372061824149083,
+			"contents": "Package Control Messages\n========================\n\nSync Settings\n-------------\n\n  Thanks for install Sync Settings\n  \n  Sync Settings, is a cross-platform solution to keep the Sublime Text configuration updated.\n  \n  How works?\n  Sync Settings uses Github-Gist allowing you to use all features that this service provides.\n  \n  Errors\n  If you find errors in the plugin, you can to execute \"Show Logs\" command and report a new issue with the file content.\n  \n  Donate\n  You are welcome support this project using Paypal \n  https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7XCNSKK5W7DKJ\n  \n  View on GitHub @mfuentesg\n  https://github.com/mfuentesg/SyncSettings\n",
 			"settings":
 			{
-				"buffer_size": 7294,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<!doctype html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"\"> <!--<![endif]-->\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n        <title></title>\n        <meta name=\"description\" content=\"\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <link rel=\"stylesheet\" href=\"css/normalize.min.css\">\n        <link rel=\"stylesheet\" href=\"css/main.css\">\n        <link rel=\"stylesheet\" href=\"node_modules/font-awesome/css/font-awesome.min.css\">\n\n        <script src=\"js/vendor/modernizr-2.8.3-respond-1.4.2.min.js\"></script>\n    </head>\n    <body>\n\n        <div class=\"header-container\">\n            <header class=\"wrapper clearfix\">\n                <div class=\"header-info\">\n                    <h1 class=\"title\">American pie</h1>\n                    <h1 class=\"sub-title\">\n                        <i class=\"fa fa-cc\"></i>\n                        <i class=\"fa fa-address-card\"></i>\n                        <i class=\"fa fa-battery-three-quarters\"></i>\n                        <i class=\"fa fa-bookmark\"></i>\n                        <i class=\"fa fa-briefcase\"></i>\n                    </h1>\n                    <h2 class=\"sub-title\">Drunk highschool students</h2>\n                    <h2 class=\"sub-title\">\n                    2008 Comedy/Adventure\n                    </h2>\n                </div>\n                <nav>\n                    <ul>\n                        <li><a href=\"#\">Logout</a></li>\n                        <li><a href=\"#\">Profile</a></li>\n                        <li><a href=\"#\">Settings</a></li>\n                    </ul>\n                </nav>\n            </header>\n        </div>\n\n        <div class=\"main-container\">\n            <div class=\"main wrapper clearfix\">\n                <aside>\n                    <h3>That Awkward Moment full movie</h3>\n                    <p><iframe width=\"100%\" height=\"300px\" src=\"https://www.youtube-nocookie.com/embed/ANZ2iX2w2H4?controls=0&amp;showinfo=0&amp;autoplay=0\" frameborder=\"0\" allowfullscreen></iframe></p>\n                </aside>\n\n                <article class=\"stripes\">\n                    <section id=\"continuewatching\" class=\"clearfix\">\n                        <header><i class=\"fa fa-camera-retro fa-4x\"></i>\n                            Continue Watching\n                        </header><!-- /header -->\n                        <article>\n                            <ul>\n                                <li class=\"selected\">American pie</li>\n                                <li>Kung Fu panda</li>\n                                <li>The destroyer</li>\n                                <li>Die hard 5</li>\n                                <li>Lethal Weapon</li>\n                                <li>Jaws</li>\n                            </ul>\n                        </article>\n                    </section>\n                    <section id=\"newtitles\" class=\"clearfix\">\n                        <header><i class=\"fa fa-bell fa-4x\"></i>\n                            New Titles\n                        </header><!-- /header -->\n                        <article>\n                            <ul>\n                                <li>American pie</li>\n                                <li>Kung Fu panda</li>\n                                <li>The destroyer</li>\n                                <li>Die hard 5</li>\n                                <li>Lethal Weapon</li>\n                                <li>Jaws</li>\n                            </ul>\n                        </article>\n                    </section>\n                    <section id=\"alltitles\" class=\"clearfix static\">\n                        <header><i class=\"fa fa-asterisk fa-4x\"></i>\n                            All Titles\n                        </header><!-- /header -->\n                        <article>\n                            <ul>\n                                <li><i class=\"fa fa-video-camera fa-4x\"></i>Movies</li>\n                                <li><i class=\"fa fa-child fa-4x\"></i>Kids</li>\n                                <li><i class=\"fa fa-pagelines fa-4x\"></i>Free</li>\n                                <li><i class=\"fa fa-credit-card-alt fa-4x\"></i>Premium</li>\n                                <li><i class=\"fa fa-coffee fa-4x\"></i>Adult</li>\n                            </ul>\n                        </article>\n                    </section>\n                </article>\n\n            </div> <!-- #main -->\n        </div> <!-- #main-container -->\n\n        <div class=\"footer-container\">\n            <footer class=\"wrapper\">\n                <h3>footer</h3>\n            </footer>\n        </div>\n\n        <script src=\"js/main.js\"></script>\n    </body>\n</html>\n",
-			"file": "/home/imaginois/Vagrant/radio/index.html",
-			"file_size": 4949,
-			"file_write_time": 131372010800532015,
-			"settings":
-			{
-				"buffer_size": 4949,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Package Control Messages\n========================\n\nSublimeLinter\n-------------\n\n  SublimeLinter 3.8.0\n  ---------------------\n    🎊 INLINE TOOLTIPS HAVE BEEN ADDED! 🎉\n  \n    To use this new feature, go to your SublimeLinter.sublime-settings file and add or change the \"tooltips\" setting to true, like below.\n    \n    \"tooltips\": true\n    \n    ----\n    \n    We will now be accepting some themes for tooltips as well, please add them to the SublimeLinter3 repository at https://github.com/SublimeLinter/SublimeLinter3 and make a pull request.\n    \n    ----\n    \n    Thank you for supporting SublimeLinter! We extremely appreciate your usage, support, and contributions.\n\n\nEmmet\n-----\n\n  Thank you for installing Emmet -- a toolkit that can greatly improve your workflow. Note that this plugin automatically downloads and installs PyV8 binary (see status bar message). \n  \n  ******************************\n  Please restart editor \n  to finish installation process \n  after PyV8 was downloaded.\n  ******************************\n  \n  Tab key handler\n  ==========================\n  \n  By default, Emmet allows you to expand abbreviations with Tab key in HTML, XML, HAML and CSS/SASS/LESS/Stylus documents. As a side effect, you can’t use some of your ST2 snippets.\n  \n  Please read https://github.com/sergeche/emmet-sublime#tab-key-handler about how Tab handler works and how to tweak its behavior to match your needs.\n  \n  Enter key\n  ==========================\n  \n  In HTML and XML documents, Emmet overrides Enter key to insert formatted line breaks between opening and closing tags. In some cases it will break character input (for example, in Japanese language).\n  \n  To disable Enter key handler, simply add the following option in your user's Preferences file:\n  \n  \"disable_formatted_linebreak\": true\n  \n  Actions shortcuts\n  ==========================\n  \n  Emmet has a number of actions with keyboard shortcuts that may override ones you're using commonly (for example, Ctrl-E or Ctrl-Down). Please read the project main page to get list of available actions and keyboard shortcuts and how to disable them:\n  https://github.com/sergeche/emmet-sublime\n  \n  Documentation and examples:\n  http://emmet.io\n  \n  ------------------------------\n  Follow me on Twitter: @emmetio\n  ------------------------------\n",
-			"settings":
-			{
-				"buffer_size": 2307,
+				"buffer_size": 680,
 				"line_ending": "Unix",
 				"name": "Package Control Messages",
 				"read_only": true,
@@ -62,36 +44,24 @@
 			}
 		},
 		{
-			"contents": "#!/bin/sh\n\t# json-server /var/www/radio/api/stb.json --port 4000\n\t# json-server /var/www/radio/api/vstb.json --port 4001\ndocker run -d -p 5000:80 -v /var/www/radio/api/vstb.json:/data/db.json clue/json-server\ndocker run -d -p 5001:80  -v /var/www/radio/api/stb.json:/data/db.json clue/json-server",
-			"file": "/home/imaginois/Vagrant/porto/puphpet/files/startup-always/start_fake_bo_api.sh",
-			"file_size": 296,
-			"file_write_time": 131372118226810361,
+			"contents": "{\n  /**\n    * This token allow to plugin do:\n    * - Create a Gist\n    * - Download a Gist\n    * - Upload a Gist\n    * - Delete a Gist\n   */\n  \"access_token\": \"\",\n\n  /**\n    * This option has a list with the excluded files\n   */\n  \"excluded_files\": [\n    \".dmg\",\n    \".DS_Store\",\n    \".DS_Store?\",\n    \".exe\",\n    \".Spotlight-V100\",\n    \".Trashes\",\n    \"ehthumbs.db\",\n    \"oscrypto-ca-bundle.crt\",\n    \"SyncSettings.sublime-settings\",\n    \"Package Control.cache\",\n    \"Package Control.last-run\",\n    \"Package Control.merged-ca-bundle\",\n    \"Package Control.system-ca-bundle\",\n    \"Package Control.user-ca-bundle\",\n    \"Thumbs.db\"\n  ],\n\n  /**\n   * Files that always should be included\n   * Note: The files included here, overwrite the rule `excluded_files`\n   */\n  \"included_files\": [],\n\n  /**\n   * Gist identifier for upload your configuration\n   */\n  \"gist_id\": \"\",\n\n  /**\n   * Download automagically the new version on ST startup\n   */\n  \"auto_upgrade\": false\n}\n",
+			"file": "/home/imaginois/.config/sublime-text-3/Packages/Sync Settings/SyncSettings.sublime-settings",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 296,
+				"buffer_size": 964,
+				"line_ending": "Unix",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "/home/imaginois/.config/sublime-text-3/Packages/User/SyncSettings.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 114,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "#!/bin/sh\ncd\ndocker run -d -p 7070:7070 -p 70:70 -v $PWD/traefik.toml:/etc/traefik/traefik.toml traefik",
-			"file": "/home/imaginois/Vagrant/porto/puphpet/files/startup-always/setup_traefik.sh",
-			"file_size": 103,
-			"file_write_time": 131363240044331447,
-			"settings":
-			{
-				"buffer_size": 103,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "#!/bin/sh\n# cd /tmp\n# wget https://github.com/containous/traefik/releases/download/v1.2.1/traefik\n# wget https://raw.githubusercontent.com/containous/traefik/master/traefik.sample.toml\n# mkdir /opt/traefik/\n# mkdir /opt/traefik/bin\n# cp traefik /opt/traefik/bin\n# cp traefik.sample.toml /opt/traefik/bin/traefik.toml\n# ln -s /opt/traefik/bin/traefik /usr/local/bin",
-			"file": "/home/imaginois/Vagrant/porto/puphpet/files/startup-once/setup_traefik.sh",
-			"file_size": 364,
-			"file_write_time": 131363240044371447,
-			"settings":
-			{
-				"buffer_size": 364,
 				"line_ending": "Unix"
 			}
 		}
@@ -103,10 +73,26 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 152.0,
-		"last_filter": "install",
+		"height": 192.0,
+		"last_filter": "sync sett",
 		"selected_items":
 		[
+			[
+				"sync sett",
+				"Sync Settings: Create and Upload"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"sync",
+				"Sync Settings: Edit User Settings"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -165,15 +151,16 @@
 	},
 	"expanded_folders":
 	[
-		"/home/imaginois/Vagrant/porto",
-		"/home/imaginois/Vagrant/porto/puphpet",
-		"/home/imaginois/Vagrant/porto/puphpet/files",
-		"/home/imaginois/Vagrant/porto/puphpet/files/startup-always",
-		"/home/imaginois/Vagrant/porto/puphpet/files/startup-always-unprivileged",
-		"/home/imaginois/Vagrant/porto/puphpet/files/startup-once"
+		"/home/imaginois/Perforce/porto"
 	],
 	"file_history":
 	[
+		"/home/imaginois/.config/sublime-text-3/Packages/User/SyncSettings.sublime-settings",
+		"/home/imaginois/Vagrant/porto/puphpet/shell/ascii-art/important-notices.txt",
+		"/home/imaginois/Vagrant/radio/index.html",
+		"/home/imaginois/Vagrant/porto/puphpet/files/startup-always/start_fake_bo_api.sh",
+		"/home/imaginois/Vagrant/porto/puphpet/files/startup-once/setup_traefik.sh",
+		"/home/imaginois/Vagrant/porto/puphpet/config.yaml",
 		"/home/imaginois/Vagrant/porto/puphpet/files/startup-always/setup_json_server.sh",
 		"/home/imaginois/Vagrant/porto/puphpet/files/startup-always/start_json_server.sh",
 		"/home/imaginois/Vagrant/porto/puphpet/files/exec-preprovision/update_ubuntu_box.sh",
@@ -220,234 +207,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/imaginois/Vagrant/porto/puphpet/config.yaml",
+					"file": "/home/imaginois/Perforce/porto/Vagrantfile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 18844,
+						"buffer_size": 909,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1945,
-								1945
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"git_gutter_enabled": true,
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/imaginois/Vagrant/porto/puphpet/shell/ascii-art/important-notices.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7294,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6417,
-								6417
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"git_gutter_enabled": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2198.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/imaginois/Vagrant/radio/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4949,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								569,
+								569
 							]
 						],
 						"settings":
@@ -459,15 +236,15 @@
 								{
 									"1":
 									[
-										14,
-										15
+										566,
+										569
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/angle_bracket.png",
+										"Packages/BracketHighlighter/icons/dot.png",
 										"brackethighlighter.default"
 									]
 								},
@@ -475,8 +252,8 @@
 								{
 									"1":
 									[
-										0,
-										1
+										407,
+										409
 									]
 								},
 								"unmatched":
@@ -495,31 +272,31 @@
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -530,44 +307,144 @@
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content"
 							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"git_gutter_enabled": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 288.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 1,
+					"file": "/home/imaginois/Perforce/porto/puphpet/files/startup-once-unprivileged/radio-setup.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2307,
+						"buffer_size": 44,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								79,
-								79
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"git_gutter_enabled": true,
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								680,
+								680
 							]
 						],
 						"settings":
@@ -591,66 +468,183 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"default_dir": "/home/imaginois/Perforce/porto",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 47.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/imaginois/.config/sublime-text-3/Packages/Sync Settings/SyncSettings.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								852,
+								852
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										860,
+										861
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										852,
+										853
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_unmatched_content"
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
-							"default_dir": "/home/imaginois/Vagrant/porto",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -661,122 +655,19 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/home/imaginois/Vagrant/porto/puphpet/files/startup-always/start_fake_bo_api.sh",
+					"file": "/home/imaginois/.config/sublime-text-3/Packages/User/SyncSettings.sublime-settings",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 296,
+						"buffer_size": 114,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								233,
-								233
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"git_gutter_enabled": true,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/imaginois/Vagrant/porto/puphpet/files/startup-always/setup_traefik.sh",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 103,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								114,
+								114
 							]
 						],
 						"settings":
@@ -809,46 +700,46 @@
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -856,116 +747,13 @@
 								"bh_regex_content"
 							],
 							"git_gutter_enabled": true,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/home/imaginois/Vagrant/porto/puphpet/files/startup-once/setup_traefik.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 364,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"git_gutter_enabled": true,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1024,6 +812,10 @@
 		"selected_items":
 		[
 			[
+				"vstbsetup",
+				"puphpet/files/startup-once-unprivileged/vstb-setup.sh"
+			],
+			[
 				"confi",
 				"puphpet/config.yaml"
 			],
@@ -1056,12 +848,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
-		"last_filter": "",
+		"height": 500.0,
+		"last_filter": "por",
 		"selected_items":
 		[
+			[
+				"por",
+				"~/Documents/porto.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
