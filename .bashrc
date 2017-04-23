@@ -117,9 +117,4 @@ fi
 
 
 
-alias wiki='lynx https://en.wikipedia.org/wiki/Special:Search?search='
-alias wikibg='lynx https://bg.wikipedia.org/wiki/Special:Search?search='
-alias weather='curl wttr.in/sofia'
-
-alias porto='cd ~/Vagrant/porto && vagrant up'
 alias cl='clear'
