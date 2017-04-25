@@ -117,4 +117,12 @@ fi
 
 
 
+
+function wiki (){
+    lynx https://en.wikipedia.org/wiki/Special:Search?search=$1
+}
+
+export -f wiki
+
+
 alias cl='clear'
